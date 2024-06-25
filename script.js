@@ -1,20 +1,14 @@
-function createUser(name, choice) { //factory for creating players.
-    const player_name = name;
-    const letter = choice;
-    return {name, choice};
-};
-
-function createBoard() {        //factory for creating board.
-    let board = [];
-    for (let i = 0; i<9; i++) {
-        board.push('null');
+function gameboard() {
+    const user1 = createUser('player1', 1, 'x');
+    const user2 = createUser('player2', 2, 'o')
+    const table = {
+        board : [],
     };
-    return {board};
-};
+}
 
-
-function playGame(user1, user2) {
-    user1 = createUser('alex', 'x');
-    user2 = createUser('mark', 'o');
-    board = createBoard();
+function createUser(user, player_number, symbol) {
+    const Player = user;
+    const Player_number  = player_number;
+    const player_symbol = symbol;
+    return {Player, Player_number, player_symbol};
 };
